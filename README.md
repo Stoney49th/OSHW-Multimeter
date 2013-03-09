@@ -1,6 +1,7 @@
 # OSHW-Multimeter
 
 First steps towards a fully open source hardware multimeter. This is the main repository for the open source hardware multimeter, inspired by a thread at the [eevblog-website](http://www.eevblog.com/forum/oshw/open-source-multimeter/ "eevblog forum thread").
+Since simple multimeters and old precision testgear isn't really that expensive anymore, this project will NOT offer a cheap/easy homebrew alternative to a bought off the shelf unit. It's purpose is to exercise the development of a precision mesurement unit and to document it's evolution so everybody can gain knownledge and have fun building one up :)
 
 
 #### The project is currently in the early requirements phase. Contributors are very welcome to join the process and discuss the requirements and early design documents.
