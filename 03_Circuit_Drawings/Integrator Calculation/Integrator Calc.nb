@@ -1,0 +1,758 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     27594,        749]
+NotebookOptionsPosition[     25333,        670]
+NotebookOutlinePosition[     25882,        691]
+CellTagsIndexPosition[     25839,        688]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Voltage Integrator Calculation", "Title",
+ CellChangeTimes->{{3.574599320102841*^9, 3.5745993246781025`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Definitions and Equations - Multislope Continuous Runup with periodic ADC \
+measurements\
+\>", "Section",
+ CellChangeTimes->{{3.574599340647016*^9, 3.574599355333856*^9}, 
+   3.5746016660220203`*^9, {3.5746018317825007`*^9, 3.574601834406651*^9}, 
+   3.5746254378336897`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["v", "outIn"], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["1", 
+      RowBox[{
+       SubscriptBox["r", "Mes"], "*", 
+       SubscriptBox["c", "int"]}]]}], "*", 
+    SubscriptBox["v", "in"], "*", 
+    SubscriptBox["\[CapitalDelta]t", "int"]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.574599403691622*^9, 3.574599533080023*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["v", "outRefPos"], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["1", 
+      RowBox[{
+       SubscriptBox["r", "RefPos"], "*", 
+       SubscriptBox["c", "int"]}]]}], "*", 
+    SubscriptBox["v", "refPos"], "*", 
+    SubscriptBox["\[CapitalDelta]t", "refPos"]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.574599545639741*^9, 3.5745995815437946`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["v", "outRefNeg"], "=", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["1", 
+      RowBox[{
+       SubscriptBox["r", "RefNeg"], "*", 
+       SubscriptBox["c", "int"]}]]}], "*", 
+    SubscriptBox["v", "refNeg"], "*", 
+    SubscriptBox["\[CapitalDelta]t", "refNeg"]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5745995840779395`*^9, 3.5745996214150753`*^9}, {
+  3.574599762455142*^9, 3.5745998429517465`*^9}, {3.5746000238960953`*^9, 
+  3.574600028679369*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[CapitalDelta]t", "refPos"], " ", "=", " ", 
+   RowBox[{
+    SubscriptBox["t", "Pos"], "*", 
+    SubscriptBox["n", "Pos"]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5746050244001083`*^9, 3.5746050264632263`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["\[CapitalDelta]t", "refNeg"], " ", "=", " ", 
+   RowBox[{
+    SubscriptBox["t", "Neg"], "*", 
+    SubscriptBox["n", "Neg"]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5746050302714443`*^9, 3.57460503142351*^9}}],
+
+Cell[TextData[{
+ "Solve for the unkown input voltage ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["V", "in"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " we want to measure:"
+}], "Text",
+ CellChangeTimes->{{3.57462809830986*^9, 3.5746281147458005`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["v", "outIn"], " ", "+", 
+      SubscriptBox["v", "outRefPos"], "+", " ", 
+      SubscriptBox["v", "outRefNeg"]}], " ", "\[Equal]", " ", 
+     SubscriptBox["\[CapitalDelta]v", "ADC"]}], ",", " ", 
+    SubscriptBox["v", "in"]}], "]"}], "//", "FullSimplify"}]], "Input",
+ CellChangeTimes->{{3.574599646764525*^9, 3.574599709050088*^9}, {
+  3.5746023205354557`*^9, 3.574602322647577*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    SubscriptBox["v", "in"], "\[Rule]", 
+    RowBox[{"-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["r", "Mes"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox["n", "Neg"], " ", 
+           SubscriptBox["r", "RefPos"], " ", 
+           SubscriptBox["t", "Neg"], " ", 
+           SubscriptBox["v", "refNeg"]}], "+", 
+          RowBox[{
+           SubscriptBox["r", "RefNeg"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["n", "Pos"], " ", 
+              SubscriptBox["t", "Pos"], " ", 
+              SubscriptBox["v", "refPos"]}], "+", 
+             RowBox[{
+              SubscriptBox["c", "int"], " ", 
+              SubscriptBox["r", "RefPos"], " ", 
+              SubscriptBox["\[CapitalDelta]v", "ADC"]}]}], ")"}]}]}], ")"}]}],
+        ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        SubscriptBox["r", "RefNeg"], " ", 
+        SubscriptBox["r", "RefPos"], " ", 
+        SubscriptBox["\[CapitalDelta]t", "int"]}], ")"}]}]}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.5746050411880684`*^9, 3.574611608817715*^9, 
+  3.5746129532296114`*^9, 3.574613090224447*^9, 3.5746227589604673`*^9, 
+  3.5746265407917757`*^9, 3.574627673223547*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Component value calculations and some error calculation\
+\>", "Section",
+ CellChangeTimes->{{3.5746016806308556`*^9, 3.5746016889183297`*^9}, {
+  3.574602398598921*^9, 3.5746024072384152`*^9}, {3.5746253325496683`*^9, 
+  3.574625348389574*^9}}],
+
+Cell["Design choices:", "Text",
+ CellChangeTimes->{{3.574622580342251*^9, 3.574622584645497*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["i", "inFS"], "=", "0.0005"}], ";", 
+  RowBox[{
+   SubscriptBox["v", "inFS"], "=", "2.5"}], ";", 
+  RowBox[{
+   SubscriptBox["v", "refPos"], "=", "5.0"}], ";", 
+  RowBox[{
+   SubscriptBox["v", "refNeg"], "=", 
+   RowBox[{"-", "5.0"}]}], ";", 
+  RowBox[{
+   SubscriptBox["v", "sat"], "=", "13"}], ";"}]], "Input",
+ CellChangeTimes->{{3.57460269072863*^9, 3.5746026974150124`*^9}, {
+   3.5746027309029274`*^9, 3.574602749815009*^9}, 3.574603044103842*^9, {
+   3.57460411406404*^9, 3.574604124239622*^9}, {3.574611668032102*^9, 
+   3.574611701856037*^9}, {3.5746118922079244`*^9, 3.5746118991043186`*^9}, {
+   3.574612062672674*^9, 3.57461206329571*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["i", "refFS"], "=", 
+   RowBox[{
+    SubscriptBox["i", "inFS"], "*", "1.25"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5746027522101464`*^9, 3.57460277290333*^9}, {
+   3.5746044750876894`*^9, 3.5746044760637455`*^9}, 3.5746117028160915`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["t", "runup"], "=", "0.0001"}], ";", " ", 
+  RowBox[{
+   SubscriptBox["v", "runupFS"], "=", 
+   RowBox[{"-", "2000"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.574604770943611*^9, 3.574604782623279*^9}, {
+   3.57460488071989*^9, 3.574604907519423*^9}, {3.574605190767624*^9, 
+   3.5746052051514463`*^9}, {3.5746059251526284`*^9, 3.574605936080253*^9}, {
+   3.574611795712405*^9, 3.574611801680746*^9}, {3.57461223848073*^9, 
+   3.5746122386407394`*^9}, {3.574612314273065*^9, 3.5746123143840714`*^9}, {
+   3.5746123676651187`*^9, 3.5746124270085135`*^9}, 3.5746125390879235`*^9, {
+   3.574612589807825*^9, 3.574612600847456*^9}, {3.574612683680194*^9, 
+   3.574612684288229*^9}, {3.5746127601125655`*^9, 3.5746127880321627`*^9}, {
+   3.5746128513597846`*^9, 3.5746128694558196`*^9}, {3.5746131138397975`*^9, 
+   3.5746131139358034`*^9}, {3.5746137098398867`*^9, 
+   3.5746137219515796`*^9}, {3.574613768129221*^9, 3.5746137723364615`*^9}, 
+   3.5746261421349735`*^9, 3.5746275026467905`*^9}],
+
+Cell["\<\
+Assuming equally long times for the reference voltages - this will very \
+likely not be the case in the final design\
+\>", "Text",
+ CellChangeTimes->{{3.5746225940540347`*^9, 3.574622621381598*^9}, {
+  3.574625361942349*^9, 3.574625365493552*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["n", "Pos"], "=", "5"}], ";", 
+  RowBox[{
+   SubscriptBox["n", "Neg"], "=", "5"}], ";", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["t", "Pos"], "=", 
+     FractionBox[
+      SubscriptBox["t", "runup"], 
+      SubscriptBox["n", "Pos"]]}], ",", 
+    RowBox[{
+     SubscriptBox["t", "Neg"], "=", 
+     FractionBox[
+      SubscriptBox["t", "runup"], 
+      SubscriptBox["n", "Neg"]]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.5746051215706663`*^9, 3.5746051643991156`*^9}, {
+   3.574605874848751*^9, 3.5746058961599703`*^9}, {3.574605952752207*^9, 
+   3.5746059599996214`*^9}, {3.574606077345333*^9, 3.574606093136236*^9}, {
+   3.5746117916811743`*^9, 3.5746117935362806`*^9}, {3.5746121973923798`*^9, 
+   3.5746122188326063`*^9}, {3.574613199120675*^9, 3.5746132262892294`*^9}, 
+   3.5746217144807262`*^9, 3.574622833399725*^9, {3.5746256547270956`*^9, 
+   3.5746256930632877`*^9}, {3.5746259584234657`*^9, 3.5746259669039507`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.00002`", ",", "0.00002`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.574625700929738*^9, {3.57462595937652*^9, 3.574625967728998*^9}, 
+   3.5746260534449005`*^9, 3.5746265408277774`*^9, 3.574627505539956*^9, 
+   3.574627673254548*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Design choice: At least 100 clock cycles for the shortest time interval \
+(might later be much shorter than ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["t", "pos"], "/", 
+    SubscriptBox["t", "neg"], " "}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "due to 3458A switch operation).\nAll operations on the FPGA must complete \
+within one clock cycle."
+}], "Text",
+ CellChangeTimes->{{3.5746226301500998`*^9, 3.5746226523573694`*^9}, {
+   3.574622872517962*^9, 3.574622875413128*^9}, 3.5746255936055994`*^9, {
+   3.574626148438334*^9, 3.574626193669921*^9}, {3.5746262306300354`*^9, 
+   3.5746262809019103`*^9}, {3.5746263989016595`*^9, 
+   3.5746264232380514`*^9}, {3.5746276272539177`*^9, 3.5746276275899367`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["f", "min"], "=", 
+  FractionBox["100", 
+   RowBox[{
+    RowBox[{"Max", "[", 
+     RowBox[{
+      SubscriptBox["t", "Pos"], ",", 
+      SubscriptBox["t", "Neg"]}], "]"}], "*", "0.5"}]]}]], "Input",
+ CellChangeTimes->{{3.5746226594757767`*^9, 3.5746227977666864`*^9}, {
+   3.5746228479275556`*^9, 3.5746228649825315`*^9}, {3.574625596887787*^9, 
+   3.5746256406952925`*^9}, 3.5746258386316137`*^9, 3.574625978198597*^9, 
+   3.5746260414792166`*^9, {3.574626086982819*^9, 3.5746261508074694`*^9}, {
+   3.5746261977831564`*^9, 3.5746262347272696`*^9}, {3.5746276287270017`*^9, 
+   3.5746276290630207`*^9}}],
+
+Cell[BoxData["9.999999999999998`*^6"], "Output",
+ CellChangeTimes->{{3.5746256819686537`*^9, 3.574625702674838*^9}, {
+   3.574625960787601*^9, 3.5746259797306843`*^9}, {3.574626042736288*^9, 
+   3.574626054847981*^9}, {3.574626096145343*^9, 3.574626168209465*^9}, {
+   3.5746262135860605`*^9, 3.5746262354093084`*^9}, 3.574626283328049*^9, 
+   3.5746264262262225`*^9, 3.5746265408547792`*^9, 3.574627506978038*^9, 
+   3.574627630113081*^9, 3.5746276732705493`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Compute the component values and constraints\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.574622966902361*^9, 3.574622975301841*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["r", "Mes"], "=", 
+    FractionBox[
+     SubscriptBox["v", "inFS"], 
+     SubscriptBox["i", "inFS"]]}], ",", 
+   RowBox[{
+    SubscriptBox["r", "RefPos"], "=", 
+    FractionBox[
+     SubscriptBox["v", "refPos"], 
+     SubscriptBox["i", "refFS"]]}], ",", 
+   RowBox[{
+    SubscriptBox["r", "RefNeg"], "=", 
+    FractionBox[
+     RowBox[{"-", 
+      SubscriptBox["v", "refNeg"]}], 
+     SubscriptBox["i", "refFS"]]}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.5746242122315893`*^9, 3.5746242170958676`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5000.`", ",", "8000.`", ",", "8000.`"}], "}"}]], "Output",
+ CellChangeTimes->{3.5746242187419615`*^9, 3.5746265408827806`*^9, 
+  3.5746275293823195`*^9, 3.57462764197676*^9, 3.5746276732875504`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Integration Capacitor: With the maximum slope ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    SubscriptBox["V", "in"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "positive and negative reference switched in), the integrator shall rise to \
+70% ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["V", "sat"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "within 3/4 of the time the reference is switched in:"
+}], "Text",
+ CellChangeTimes->{{3.574623906502103*^9, 3.5746239133174925`*^9}, {
+   3.5746240004854784`*^9, 3.574624040453764*^9}, {3.574624073317644*^9, 
+   3.5746241371252937`*^9}, 3.5746254087570267`*^9, {3.5746268370467205`*^9, 
+   3.5746268373497376`*^9}, {3.574626901606413*^9, 3.5746269017024183`*^9}, {
+   3.5746273766145816`*^9, 3.5746273767575903`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"capacitor", "=", 
+  RowBox[{"NSolve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{
+         SubscriptBox["r", "Mes"], "*", 
+         SubscriptBox["c", "int"]}]], "*", 
+       SubscriptBox["v", "inFS"], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["t", "Pos"], "*", 
+         FractionBox["3", "4"]}], ")"}]}], "+", 
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{
+         SubscriptBox["r", "RefPos"], "*", 
+         SubscriptBox["c", "int"]}]], "*", 
+       SubscriptBox["v", "refPos"], "*", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["t", "Pos"], "*", 
+         FractionBox["3", "4"]}], ")"}]}]}], "\[Equal]", 
+     RowBox[{"(", 
+      RowBox[{"0.70", "*", 
+       SubscriptBox["v", "sat"]}], ")"}]}], ",", 
+    SubscriptBox["c", "int"]}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.5746238999907303`*^9, {3.574624145670782*^9, 3.574624184856024*^9}, {
+   3.57462425210387*^9, 3.5746243507765136`*^9}, {3.5746243930169296`*^9, 
+   3.574624423720686*^9}, {3.5746244997690353`*^9, 3.574624527240607*^9}, {
+   3.574624560457507*^9, 3.5746246088252735`*^9}, {3.574625454553646*^9, 
+   3.5746254667443433`*^9}, 3.574626513193197*^9, {3.574626636647258*^9, 
+   3.5746267329377656`*^9}, {3.5746268022817316`*^9, 
+   3.5746268042978473`*^9}, {3.5746268418489947`*^9, 
+   3.5746268456402116`*^9}, {3.5746269035925264`*^9, 3.574626936281396*^9}, {
+   3.574627102425899*^9, 3.5746271267612906`*^9}, {3.5746271647294626`*^9, 
+   3.574627177881215*^9}, {3.5746272885855465`*^9, 3.5746272899936275`*^9}, {
+   3.574627379225731*^9, 3.574627379256733*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    SubscriptBox["c", "int"], "\[Rule]", "1.8543956043956045`*^-9"}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.5746265136682243`*^9, 3.574626540910782*^9}, 
+   3.5746267476016045`*^9, 3.574626805712928*^9, 3.5746268468052783`*^9, {
+   3.574626907743764*^9, 3.574626937362458*^9}, {3.574627114824608*^9, 
+   3.5746271280663657`*^9}, {3.574627167538623*^9, 3.5746271796343155`*^9}, 
+   3.574627291777729*^9, 3.5746273807708197`*^9, 3.5746275314584384`*^9, {
+   3.5746276441318827`*^9, 3.574627673326553*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Calculate the slew rate of the rising signal with fullscale input and \
+corresponding reference:\
+\>", "Text",
+ CellChangeTimes->{{3.5746281553981256`*^9, 3.574628195062394*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"slewrateV\[Micro]sMin", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       SubscriptBox["r", "Mes"], "*", 
+       SubscriptBox["c", "int"]}]], "*", 
+     SubscriptBox["v", "inFS"], "*", "0.000001"}], "+", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{
+       SubscriptBox["r", "RefPos"], "*", 
+       SubscriptBox["c", "int"]}]], "*", 
+     SubscriptBox["v", "refPos"], "*", "0.000001"}]}], " ", "/.", 
+   "capacitor"}]}]], "Input",
+ CellChangeTimes->{{3.5746028079233327`*^9, 3.5746028116235447`*^9}, {
+   3.5746029387428155`*^9, 3.574602946199242*^9}, {3.5746029966151257`*^9, 
+   3.5746030457039332`*^9}, {3.5746031698800354`*^9, 3.574603194216428*^9}, {
+   3.5746044809290237`*^9, 3.5746044918576484`*^9}, {3.5746045293947954`*^9, 
+   3.5746045332340155`*^9}, {3.574611688610279*^9, 3.574611690081363*^9}, 
+   3.574611904946653*^9, {3.5746120116827583`*^9, 3.57461205053098*^9}, {
+   3.5746120924343767`*^9, 3.574612109314342*^9}, {3.5746234932894683`*^9, 
+   3.5746235605043125`*^9}, {3.574623647736302*^9, 3.574623670199587*^9}, {
+   3.5746237223925724`*^9, 3.574623726807825*^9}, {3.5746238039292355`*^9, 
+   3.574623804296257*^9}, 3.574623893640367*^9, {3.5746240500243115`*^9, 
+   3.574624068472367*^9}, {3.5746241998478813`*^9, 3.574624202151013*^9}, {
+   3.5746265873194366`*^9, 3.5746265930157623`*^9}, 3.574626758408222*^9, {
+   3.5746282557518654`*^9, 3.5746282755759993`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "0.6066666666666666`", "}"}]], "Output",
+ CellChangeTimes->{{3.5746121275983877`*^9, 3.5746121345797873`*^9}, {
+   3.574612221011731*^9, 3.5746122421959424`*^9}, 3.574612317891272*^9, {
+   3.5746124058763046`*^9, 3.5746124297796717`*^9}, 3.574612541892084*^9, 
+   3.5746126038776293`*^9, 3.5746126880044413`*^9, 3.574612853588912*^9, 
+   3.574612953306616*^9, {3.574613073859511*^9, 3.574613090290451*^9}, 
+   3.574613228596361*^9, 3.574613776308689*^9, {3.5746217171398783`*^9, 
+   3.574621737590048*^9}, 3.574622759042472*^9, 3.5746235523198442`*^9, 
+   3.5746236838793693`*^9, {3.574623723526637*^9, 3.5746237274318604`*^9}, 
+   3.574623806086359*^9, 3.5746239012047997`*^9, {3.574624055288613*^9, 
+   3.574624068966395*^9}, 3.574624400401352*^9, {3.5746255555544233`*^9, 
+   3.5746255699072437`*^9}, 3.5746265409627852`*^9, 3.5746265887075157`*^9, {
+   3.5746267523688765`*^9, 3.574626759554288*^9}, 3.5746268078750515`*^9, 
+   3.574626849122411*^9, {3.5746269093638563`*^9, 3.574626938594528*^9}, 
+   3.57462698128397*^9, {3.5746271167387176`*^9, 3.574627129666457*^9}, {
+   3.574627169649744*^9, 3.574627181442418*^9}, 3.574627293219812*^9, 
+   3.5746273826259255`*^9, 3.574627534669622*^9, {3.574627645730974*^9, 
+   3.5746276733435535`*^9}, {3.5746282586420307`*^9, 3.574628276706064*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Design choice: The maximum current leakage into the opamp should be less than \
+5 least significant counts (drift of bias current might become relevant with \
+temperature):\
+\>", "Text",
+ CellChangeTimes->{{3.5746231279575725`*^9, 3.574623167653843*^9}, {
+   3.5746249445664763`*^9, 3.574624974118167*^9}, {3.5746251883744216`*^9, 
+   3.574625284965946*^9}, 3.5746254219407806`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["i", "errorOpAmpMax"], "=", 
+  RowBox[{
+   SubscriptBox["i", "inFS"], "*", "0.0000005"}]}]], "Input",
+ CellChangeTimes->{{3.574623002634404*^9, 3.574623030630006*^9}, {
+   3.574623076375622*^9, 3.574623111255617*^9}, {3.5746231775754104`*^9, 
+   3.5746232747599688`*^9}, {3.5746248273047695`*^9, 3.574624851848173*^9}, {
+   3.5746249060402727`*^9, 3.5746249510798492`*^9}, 3.5746249841197386`*^9, 
+   3.5746252576243825`*^9, 3.5746253035110073`*^9}],
+
+Cell[BoxData["2.5`*^-10"], "Output",
+ CellChangeTimes->{{3.57462325187366*^9, 3.574623275334002*^9}, 
+   3.5746236867395325`*^9, 3.5746237305980415`*^9, {3.574624907252342*^9, 
+   3.5746249852838054`*^9}, {3.5746252593944836`*^9, 3.5746252884191437`*^9}, 
+   3.574626540989787*^9, 3.57462698372711*^9, 3.5746276733595543`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Compute the maximum acceptable timing jitter to not affect the measurement \
+more than 0.75 of a least significant digit on a full-scale input:\
+\>", "Text",
+ CellChangeTimes->{{3.5746228921020823`*^9, 3.574622933253436*^9}, {
+  3.5746273965017195`*^9, 3.574627430645672*^9}, {3.5746278924380856`*^9, 
+  3.5746278982144156`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"VerrJitter", "[", 
+    RowBox[{"tJitter_", ",", "\[CapitalDelta]vADC_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["r", "Mes"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            SubscriptBox["n", "Neg"], " ", 
+            SubscriptBox["r", "RefPos"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              SubscriptBox["t", "Neg"], " ", "+", 
+              FractionBox["tJitter", 
+               SubscriptBox["n", "Neg"]]}], ")"}], 
+            SubscriptBox["v", "refNeg"]}], "+", 
+           RowBox[{
+            SubscriptBox["r", "RefNeg"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               SubscriptBox["n", "Pos"], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 SubscriptBox["t", "Pos"], "+", 
+                 FractionBox["tJitter", 
+                  SubscriptBox["n", "Pos"]]}], ")"}], " ", 
+               SubscriptBox["v", "refPos"]}], "+", 
+              RowBox[{
+               SubscriptBox["c", "int"], " ", 
+               SubscriptBox["r", "RefPos"], " ", "\[CapitalDelta]vADC"}]}], 
+             ")"}]}]}], ")"}]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["r", "RefNeg"], " ", 
+         SubscriptBox["r", "RefPos"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           SubscriptBox["t", "runup"], "+", "tJitter"}], ")"}]}], ")"}]}]}], 
+     "+", 
+     FractionBox[
+      RowBox[{
+       SubscriptBox["r", "Mes"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["n", "Neg"], " ", 
+          SubscriptBox["r", "RefPos"], " ", 
+          SubscriptBox["t", "Neg"], " ", 
+          SubscriptBox["v", "refNeg"]}], "+", 
+         RowBox[{
+          SubscriptBox["r", "RefNeg"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SubscriptBox["n", "Pos"], " ", 
+             SubscriptBox["t", "Pos"], " ", 
+             SubscriptBox["v", "refPos"]}], "+", 
+            RowBox[{
+             SubscriptBox["c", "int"], " ", 
+             SubscriptBox["r", "RefPos"], " ", "\[CapitalDelta]vADC"}]}], 
+           ")"}]}]}], ")"}]}], 
+      RowBox[{
+       SubscriptBox["r", "RefNeg"], " ", 
+       SubscriptBox["r", "RefPos"], " ", 
+       SubscriptBox["t", "runup"]}]]}], "/.", "capacitor"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5746047948619795`*^9, 3.574604808128738*^9}, {
+   3.574604910592599*^9, 3.574604922528281*^9}, {3.57460603164872*^9, 
+   3.5746060562901287`*^9}, {3.574611189521733*^9, 3.5746112251047683`*^9}, {
+   3.5746113579833684`*^9, 3.5746114372969046`*^9}, 3.5746116465298724`*^9, 
+   3.5746117201450825`*^9, {3.5746118169136176`*^9, 3.5746118185457115`*^9}, {
+   3.5746122879545593`*^9, 3.574612299217204*^9}, {3.5746125367857924`*^9, 
+   3.574612573009864*^9}, {3.574612712898865*^9, 3.5746127422905464`*^9}, {
+   3.5746128883378997`*^9, 3.5746129377457256`*^9}, {3.574613012354993*^9, 
+   3.5746130696982727`*^9}, 3.5746131257944813`*^9, {3.5746137919705844`*^9, 
+   3.5746138098906097`*^9}, 3.5746182147555532`*^9, 3.574618322115694*^9, {
+   3.574618437316283*^9, 3.5746184399754353`*^9}, {3.574618482771883*^9, 
+   3.574618484242967*^9}, 3.574621732065732*^9, 3.5746268716096973`*^9, {
+   3.5746272588748474`*^9, 3.574627270234497*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"VerrJitter", "[", 
+       RowBox[{"tJitter", ",", "13"}], "]"}], "==", "0.00000075"}], ",", 
+     "tJitter"}], "]"}], ",", 
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"VerrJitter", "[", 
+       RowBox[{"tJitter", ",", "13"}], "]"}], "==", "0.0000001"}], ",", 
+     "tJitter"}], "]"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.5746178525938387`*^9, 3.5746178718889427`*^9}, {
+  3.5746180424326973`*^9, 3.574618060064706*^9}, {3.5746181653607283`*^9, 
+  3.5746181935523405`*^9}, {3.5746182497765565`*^9, 3.57461827798417*^9}, {
+  3.5746183341613827`*^9, 3.574618496896691*^9}, {3.5746186658883567`*^9, 
+  3.574618681040223*^9}, {3.574618837424168*^9, 3.5746188384802284`*^9}, {
+  3.574623317559417*^9, 3.574623324006786*^9}, {3.5746233611749115`*^9, 
+  3.5746233722145433`*^9}, {3.574627434326883*^9, 3.5746274343908863`*^9}, {
+  3.5746279023756533`*^9, 3.5746279043587666`*^9}, {3.5746279369516315`*^9, 
+  3.5746279453031087`*^9}, {3.574628000519267*^9, 3.5746280119589214`*^9}, {
+  3.5746280463588886`*^9, 3.5746280482629976`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"tJitter", "\[Rule]", "6.222226095378447`*^-11"}], "}"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"tJitter", "\[Rule]", "8.296296984581676`*^-12"}], "}"}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.5746185065422425`*^9, {3.574618673481791*^9, 3.5746186816632586`*^9}, 
+   3.574618840813362*^9, {3.57462172188715*^9, 3.574621734463869*^9}, 
+   3.574622759084474*^9, {3.5746233187894874`*^9, 3.5746233244218097`*^9}, 
+   3.5746233730395904`*^9, 3.574623690199731*^9, 3.574626461183222*^9, 
+   3.5746265411807976`*^9, 3.5746268750268927`*^9, 3.574626914581155*^9, 
+   3.5746269879853535`*^9, 3.5746271859686775`*^9, {3.5746272732986727`*^9, 
+   3.574627298273101*^9}, 3.574627385551093*^9, 3.574627436382*^9, {
+   3.57462753901587*^9, 3.574627558151965*^9}, 3.574627673401557*^9, 
+   3.5746279055268335`*^9, 3.574627950438402*^9, {3.574628001702335*^9, 
+   3.574628017238223*^9}, 3.574628049430064*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1776, 930},
+WindowMargins->{{Automatic, 59}, {Automatic, 6}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.1999999999999, 841.98}},
+Magnification->1.3000000715255737`,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 115, 1, 117, "Title"],
+Cell[CellGroupData[{
+Cell[719, 27, 285, 6, 102, "Section"],
+Cell[1007, 35, 389, 12, 67, "Input"],
+Cell[1399, 49, 405, 12, 67, "Input"],
+Cell[1807, 63, 509, 14, 69, "Input"],
+Cell[2319, 79, 266, 7, 39, "Input"],
+Cell[2588, 88, 263, 7, 39, "Input"],
+Cell[2854, 97, 265, 8, 39, "Text"],
+Cell[CellGroupData[{
+Cell[3144, 109, 492, 12, 39, "Input"],
+Cell[3639, 123, 1339, 38, 63, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5027, 167, 254, 5, 102, "Section"],
+Cell[5284, 174, 97, 1, 39, "Text"],
+Cell[5384, 177, 702, 17, 39, "Input"],
+Cell[6089, 196, 293, 7, 39, "Input"],
+Cell[6385, 205, 1042, 18, 39, "Input"],
+Cell[7430, 225, 257, 5, 39, "Text"],
+Cell[CellGroupData[{
+Cell[7712, 234, 1000, 24, 70, "Input"],
+Cell[8715, 260, 277, 6, 39, "Output"]
+}, Open  ]],
+Cell[9007, 269, 759, 16, 68, "Text"],
+Cell[CellGroupData[{
+Cell[9791, 289, 642, 14, 69, "Input"],
+Cell[10436, 305, 464, 6, 41, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10937, 316, 143, 3, 43, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[11105, 323, 573, 19, 65, "Input"],
+Cell[11681, 344, 238, 4, 39, "Output"]
+}, Open  ]],
+Cell[11934, 351, 807, 19, 39, "Text"],
+Cell[CellGroupData[{
+Cell[12766, 374, 1670, 41, 67, "Input"],
+Cell[14439, 417, 572, 11, 43, "Output"]
+}, Open  ]],
+Cell[15026, 431, 188, 4, 39, "Text"],
+Cell[CellGroupData[{
+Cell[15239, 439, 1456, 29, 67, "Input"],
+Cell[16698, 470, 1325, 18, 39, "Output"]
+}, Open  ]],
+Cell[18038, 491, 392, 7, 39, "Text"],
+Cell[CellGroupData[{
+Cell[18455, 502, 488, 9, 39, "Input"],
+Cell[18946, 513, 326, 4, 41, "Output"]
+}, Open  ]],
+Cell[19287, 520, 339, 6, 39, "Text"],
+Cell[19629, 528, 3433, 85, 159, "Input"],
+Cell[CellGroupData[{
+Cell[23087, 617, 1165, 24, 39, "Input"],
+Cell[24255, 643, 1026, 21, 43, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
