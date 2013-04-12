@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     33141,        863]
-NotebookOptionsPosition[     30429,        768]
-NotebookOutlinePosition[     30978,        789]
-CellTagsIndexPosition[     30935,        786]
+NotebookDataLength[     34931,        919]
+NotebookOptionsPosition[     31957,        815]
+NotebookOutlinePosition[     32506,        836]
+CellTagsIndexPosition[     32463,        833]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -229,6 +229,11 @@ Cell[BoxData[
   RowBox[{"{", 
    RowBox[{
     RowBox[{
+     SubscriptBox["t", "Pattern"], "=", 
+     FractionBox[
+      SubscriptBox["t", "runup"], 
+      SubscriptBox["n", "Patters"]]}], ",", 
+    RowBox[{
      SubscriptBox["t", "Pos"], "=", 
      RowBox[{
       FractionBox[
@@ -248,18 +253,19 @@ Cell[BoxData[
    3.5746217144807262`*^9, 3.574622833399725*^9, {3.5746256547270956`*^9, 
    3.5746256930632877`*^9}, {3.5746259584234657`*^9, 
    3.5746259669039507`*^9}, {3.5747888090064917`*^9, 3.574788849774824*^9}, {
-   3.5747928088952727`*^9, 3.574792847279468*^9}}],
+   3.5747928088952727`*^9, 3.574792847279468*^9}, {3.5747951064476852`*^9, 
+   3.5747951231356397`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"0.00008`", ",", "0.00008`"}], "}"}]], "Output",
+  RowBox[{"0.0001`", ",", "0.00008`", ",", "0.00008`"}], "}"}]], "Output",
  CellChangeTimes->{
   3.574625700929738*^9, {3.57462595937652*^9, 3.574625967728998*^9}, 
    3.5746260534449005`*^9, 3.5746265408277774`*^9, 3.574627505539956*^9, 
    3.574627673254548*^9, 3.5747020608474274`*^9, 3.574711870243493*^9, 
    3.5747141259045095`*^9, {3.5747142191818447`*^9, 3.574714229220419*^9}, {
    3.5747888437544794`*^9, 3.574788854056069*^9}, 3.5747929054487953`*^9, 
-   3.574793476745472*^9}]
+   3.574793476745472*^9, 3.574795123930685*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -304,6 +310,87 @@ Cell[BoxData["9.999999999999998`*^6"], "Output",
    3.57471422924442*^9}, 3.5747888559751787`*^9, 3.5747927726972027`*^9, 
    3.5747929071118903`*^9, 3.5747934779455404`*^9, {3.574794258425181*^9, 
    3.5747942922151136`*^9}, {3.574794381385214*^9, 3.574794382747292*^9}}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Compute the required ADC resolution in noise-free \
+counts to resolve the virtual runup signal to the desired digit counts.", \
+"Subsection"]], "Text",
+ CellChangeTimes->{{3.5746288425344276`*^9, 3.5746288705180283`*^9}, {
+  3.5746290650141525`*^9, 3.574629086614388*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["adc", "volts"], "=", 
+  FractionBox[
+   RowBox[{"-", 
+    SubscriptBox["v", "runupFS"]}], "2500000"]}]], "Input",
+ CellChangeTimes->{{3.574628894422395*^9, 3.5746289379748864`*^9}, 
+   3.574629038839656*^9}],
+
+Cell[BoxData[
+ FractionBox["1", "1250"]], "Output",
+ CellChangeTimes->{{3.5746289244951153`*^9, 3.574628946864395*^9}, 
+   3.574629039568697*^9, 3.5747020610264378`*^9, 3.5747118704565053`*^9, 
+   3.574714126069519*^9, {3.5747142193338532`*^9, 3.57471422941643*^9}, 
+   3.574788922629991*^9, 3.574792921304702*^9, 3.5747934849689417`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["adc", "counts"], "=", 
+  FractionBox[
+   RowBox[{"2", "*", 
+    SubscriptBox["v", "sat"]}], 
+   SubscriptBox["adc", "volts"]]}]], "Input",
+ CellChangeTimes->{{3.5746289766941013`*^9, 3.5746290280880404`*^9}}],
+
+Cell[BoxData["27500"], "Output",
+ CellChangeTimes->{{3.574629029455119*^9, 3.574629041296796*^9}, 
+   3.574702061041439*^9, 3.5747118704805064`*^9, 3.5747141260875196`*^9, {
+   3.574714219349854*^9, 3.5747142294374313`*^9}, 3.5747889239430656`*^9, 
+   3.574792922472769*^9, 3.5747934862960176`*^9}]
+}, Open  ]],
+
+Cell["Add some margin ", "Text",
+ CellChangeTimes->{{3.5746291941985416`*^9, 3.5746291969336977`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["adc", "realcounts"], "=", 
+  RowBox[{
+   SubscriptBox["adc", "counts"], "*", "1.5"}]}]], "Input",
+ CellChangeTimes->{{3.574629089417548*^9, 3.574629126710682*^9}}],
+
+Cell[BoxData["41250.`"], "Output",
+ CellChangeTimes->{{3.574629118029185*^9, 3.574629127629734*^9}, 
+   3.57470206105744*^9, 3.574711870504508*^9, 3.574714126104521*^9, {
+   3.574714219366855*^9, 3.5747142294564323`*^9}, 3.5747889252221394`*^9, 
+   3.574792923702839*^9, 3.574793487543089*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"2", "^", "14"}], ",", " ", 
+   RowBox[{"2", "^", "16"}], ",", " ", 
+   RowBox[{"2", "^", "18"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.5746291346171336`*^9, 3.574629157575447*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"16384", ",", "65536", ",", "262144"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5746291508320613`*^9, 3.5746291590395308`*^9}, 
+   3.57470206107244*^9, 3.574711870528509*^9, 3.574714126123522*^9, {
+   3.574714219382856*^9, 3.5747142294754333`*^9}, 3.5747889263432035`*^9, 
+   3.57479292511292*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -489,6 +576,47 @@ Cell[BoxData[
    3.5747020609544334`*^9, 3.5747118703564997`*^9, 3.5747141259965143`*^9, {
    3.574714219264849*^9, 3.574714229337425*^9}, 3.574788867399832*^9, 
    3.5747927017371435`*^9, 3.5747929135932612`*^9, 3.5747934812567296`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Calculate the settling time - since we measure the second voltage for ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalDelta]V", "adc"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " at the end of the last pattern, the opamp has to settle to less than 0.1 \
+least significant digits after the last switch within:"
+}], "Text",
+ CellChangeTimes->{{3.5747951454369154`*^9, 3.574795205597356*^9}, {
+  3.574795288061073*^9, 3.5747953275493317`*^9}, {3.5747955426216326`*^9, 
+  3.574795543709695*^9}, {3.574795593869564*^9, 3.574795628397539*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["t", "settle"], "=", 
+  RowBox[{
+   SubscriptBox["t", "Pattern"], " ", "*", "0.1"}]}]], "Input",
+ CellChangeTimes->{{3.574795209258566*^9, 3.574795230541783*^9}}],
+
+Cell[BoxData["0.00001`"], "Output",
+ CellChangeTimes->{3.5747952324218903`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["v", 
+   RowBox[{"settle", " "}]], "=", 
+  RowBox[{
+   SubscriptBox["adc", "volts"], " ", "*", "0.1"}]}]], "Input",
+ CellChangeTimes->{{3.574795571326275*^9, 3.574795582765929*^9}, {
+  3.574795639582179*^9, 3.574795641374281*^9}}],
+
+Cell[BoxData["0.00008`"], "Output",
+ CellChangeTimes->{3.574795642280333*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -680,87 +808,6 @@ Cell[BoxData[
    3.574712224319745*^9, 3.5747122283519754`*^9}, 3.5747141260515175`*^9, {
    3.574714219316852*^9, 3.574714229398429*^9}, {3.574788891095187*^9, 
    3.5747889025858445`*^9}, 3.574792918700553*^9, 3.5747934837558727`*^9}]
-}, Open  ]],
-
-Cell[TextData[StyleBox["Compute the required ADC resolution in noise-free \
-counts to resolve the virtual runup signal to the desired digit counts.", \
-"Subsection"]], "Text",
- CellChangeTimes->{{3.5746288425344276`*^9, 3.5746288705180283`*^9}, {
-  3.5746290650141525`*^9, 3.574629086614388*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  SubscriptBox["adc", "volts"], "=", 
-  FractionBox[
-   RowBox[{"-", 
-    SubscriptBox["v", "runupFS"]}], "2500000"]}]], "Input",
- CellChangeTimes->{{3.574628894422395*^9, 3.5746289379748864`*^9}, 
-   3.574629038839656*^9}],
-
-Cell[BoxData[
- FractionBox["1", "1250"]], "Output",
- CellChangeTimes->{{3.5746289244951153`*^9, 3.574628946864395*^9}, 
-   3.574629039568697*^9, 3.5747020610264378`*^9, 3.5747118704565053`*^9, 
-   3.574714126069519*^9, {3.5747142193338532`*^9, 3.57471422941643*^9}, 
-   3.574788922629991*^9, 3.574792921304702*^9, 3.5747934849689417`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  SubscriptBox["adc", "counts"], "=", 
-  FractionBox[
-   RowBox[{"2", "*", 
-    SubscriptBox["v", "sat"]}], 
-   SubscriptBox["adc", "volts"]]}]], "Input",
- CellChangeTimes->{{3.5746289766941013`*^9, 3.5746290280880404`*^9}}],
-
-Cell[BoxData["27500"], "Output",
- CellChangeTimes->{{3.574629029455119*^9, 3.574629041296796*^9}, 
-   3.574702061041439*^9, 3.5747118704805064`*^9, 3.5747141260875196`*^9, {
-   3.574714219349854*^9, 3.5747142294374313`*^9}, 3.5747889239430656`*^9, 
-   3.574792922472769*^9, 3.5747934862960176`*^9}]
-}, Open  ]],
-
-Cell["Add some margin ", "Text",
- CellChangeTimes->{{3.5746291941985416`*^9, 3.5746291969336977`*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  SubscriptBox["adc", "realcounts"], "=", 
-  RowBox[{
-   SubscriptBox["adc", "counts"], "*", "1.5"}]}]], "Input",
- CellChangeTimes->{{3.574629089417548*^9, 3.574629126710682*^9}}],
-
-Cell[BoxData["41250.`"], "Output",
- CellChangeTimes->{{3.574629118029185*^9, 3.574629127629734*^9}, 
-   3.57470206105744*^9, 3.574711870504508*^9, 3.574714126104521*^9, {
-   3.574714219366855*^9, 3.5747142294564323`*^9}, 3.5747889252221394`*^9, 
-   3.574792923702839*^9, 3.574793487543089*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"2", "^", "14"}], ",", " ", 
-   RowBox[{"2", "^", "16"}], ",", " ", 
-   RowBox[{"2", "^", "18"}]}], "}"}]], "Input",
- CellChangeTimes->{{3.5746291346171336`*^9, 3.574629157575447*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"16384", ",", "65536", ",", "262144"}], "}"}]], "Output",
- CellChangeTimes->{{3.5746291508320613`*^9, 3.5746291590395308`*^9}, 
-   3.57470206107244*^9, 3.574711870528509*^9, 3.574714126123522*^9, {
-   3.574714219382856*^9, 3.5747142294754333`*^9}, 3.5747889263432035`*^9, 
-   3.57479292511292*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -809,58 +856,67 @@ Cell[5698, 179, 293, 7, 39, "Input"],
 Cell[5994, 188, 1139, 19, 39, "Input"],
 Cell[7136, 209, 469, 11, 39, "Text"],
 Cell[CellGroupData[{
-Cell[7630, 224, 1121, 26, 68, "Input"],
-Cell[8754, 252, 501, 9, 39, "Output"]
+Cell[7630, 224, 1327, 32, 68, "Input"],
+Cell[8960, 258, 539, 9, 39, "Output"]
 }, Open  ]],
-Cell[9270, 264, 624, 10, 64, "Text"],
+Cell[9514, 270, 624, 10, 64, "Text"],
 Cell[CellGroupData[{
-Cell[9919, 278, 765, 15, 86, "Input"],
-Cell[10687, 295, 789, 10, 73, "Output"]
+Cell[10163, 284, 765, 15, 86, "Input"],
+Cell[10931, 301, 789, 10, 41, "Output"]
 }, Open  ]],
+Cell[11735, 314, 296, 4, 49, "Text"],
 Cell[CellGroupData[{
-Cell[11513, 310, 143, 3, 43, "Subsubsection"],
-Cell[CellGroupData[{
-Cell[11681, 317, 573, 19, 65, "Input"],
-Cell[12257, 338, 444, 8, 39, "Output"]
-}, Open  ]],
-Cell[12716, 349, 795, 18, 39, "Text"],
-Cell[CellGroupData[{
-Cell[13536, 371, 1722, 40, 67, "Input"],
-Cell[15261, 413, 794, 14, 43, "Output"]
-}, Open  ]],
-Cell[16070, 430, 188, 4, 39, "Text"],
-Cell[CellGroupData[{
-Cell[16283, 438, 1456, 29, 67, "Input"],
-Cell[17742, 469, 1550, 21, 39, "Output"]
-}, Open  ]],
-Cell[19307, 493, 392, 7, 39, "Text"],
-Cell[CellGroupData[{
-Cell[19724, 504, 488, 9, 39, "Input"],
-Cell[20215, 515, 473, 6, 41, "Output"]
-}, Open  ]],
-Cell[20703, 524, 668, 13, 64, "Text"],
-Cell[21374, 539, 3579, 85, 90, "Input"],
-Cell[CellGroupData[{
-Cell[24978, 628, 1214, 25, 39, "Input"],
-Cell[26195, 655, 1420, 26, 43, "Output"]
-}, Open  ]],
-Cell[27630, 684, 296, 4, 49, "Text"],
-Cell[CellGroupData[{
-Cell[27951, 692, 247, 7, 62, "Input"],
-Cell[28201, 701, 338, 5, 57, "Output"]
+Cell[12056, 322, 247, 7, 62, "Input"],
+Cell[12306, 331, 338, 5, 57, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28576, 711, 248, 7, 67, "Input"],
-Cell[28827, 720, 298, 4, 39, "Output"]
+Cell[12681, 341, 248, 7, 67, "Input"],
+Cell[12932, 350, 298, 4, 39, "Output"]
 }, Open  ]],
-Cell[29140, 727, 102, 1, 39, "Text"],
+Cell[13245, 357, 102, 1, 39, "Text"],
 Cell[CellGroupData[{
-Cell[29267, 732, 203, 5, 39, "Input"],
-Cell[29473, 739, 293, 4, 39, "Output"]
+Cell[13372, 362, 203, 5, 39, "Input"],
+Cell[13578, 369, 293, 4, 39, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29803, 748, 235, 6, 39, "Input"],
-Cell[30041, 756, 336, 6, 39, "Output"]
+Cell[13908, 378, 235, 6, 39, "Input"],
+Cell[14146, 386, 336, 6, 39, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14519, 397, 143, 3, 43, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[14687, 404, 573, 19, 65, "Input"],
+Cell[15263, 425, 444, 8, 39, "Output"]
+}, Open  ]],
+Cell[15722, 436, 795, 18, 39, "Text"],
+Cell[CellGroupData[{
+Cell[16542, 458, 1722, 40, 67, "Input"],
+Cell[18267, 500, 794, 14, 43, "Output"]
+}, Open  ]],
+Cell[19076, 517, 188, 4, 39, "Text"],
+Cell[CellGroupData[{
+Cell[19289, 525, 1456, 29, 67, "Input"],
+Cell[20748, 556, 1550, 21, 39, "Output"]
+}, Open  ]],
+Cell[22313, 580, 575, 11, 39, "Text"],
+Cell[CellGroupData[{
+Cell[22913, 595, 201, 5, 39, "Input"],
+Cell[23117, 602, 79, 1, 39, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23233, 608, 269, 7, 39, "Input"],
+Cell[23505, 617, 77, 1, 71, "Output"]
+}, Open  ]],
+Cell[23597, 621, 392, 7, 39, "Text"],
+Cell[CellGroupData[{
+Cell[24014, 632, 488, 9, 39, "Input"],
+Cell[24505, 643, 473, 6, 41, "Output"]
+}, Open  ]],
+Cell[24993, 652, 668, 13, 64, "Text"],
+Cell[25664, 667, 3579, 85, 90, "Input"],
+Cell[CellGroupData[{
+Cell[29268, 756, 1214, 25, 39, "Input"],
+Cell[30485, 783, 1420, 26, 43, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
