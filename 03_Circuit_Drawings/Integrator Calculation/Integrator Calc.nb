@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     41345,       1057]
-NotebookOptionsPosition[     38121,        943]
-NotebookOutlinePosition[     38670,        964]
-CellTagsIndexPosition[     38627,        961]
+NotebookDataLength[     44634,       1140]
+NotebookOptionsPosition[     41101,       1015]
+NotebookOutlinePosition[     41650,       1036]
+CellTagsIndexPosition[     41607,       1033]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -108,23 +108,15 @@ Cell[BoxData[
   RowBox[{"{", 
    RowBox[{
     SubscriptBox["v", "in"], "\[Rule]", 
-    FractionBox[
-     RowBox[{
-      SubscriptBox["v", "inFS"], " ", 
-      RowBox[{"(", 
-       RowBox[{
-        RowBox[{
-         SubscriptBox["i", "refFS"], " ", 
-         RowBox[{"(", 
-          RowBox[{
-           SubscriptBox["t", "Neg"], "-", 
-           SubscriptBox["t", "Pos"]}], ")"}]}], "-", 
-        RowBox[{
-         SubscriptBox["c", "int"], " ", 
-         SubscriptBox["\[CapitalDelta]v", "ADC"]}]}], ")"}]}], 
-     RowBox[{
-      SubscriptBox["i", "inFS"], " ", 
-      SubscriptBox["\[CapitalDelta]t", "int"]}]]}], "}"}], "}"}]], "Output",
+    RowBox[{"0.`", "\[VeryThinSpace]", "-", 
+     FractionBox[
+      RowBox[{"1.`", " ", 
+       SubscriptBox["c", "int"], " ", 
+       SubscriptBox["v", "inFS"], " ", 
+       SubscriptBox["\[CapitalDelta]v", "ADC"]}], 
+      RowBox[{
+       SubscriptBox["i", "inFS"], " ", 
+       SubscriptBox["\[CapitalDelta]t", "int"]}]]}]}], "}"}], "}"}]], "Output",
  CellChangeTimes->{
   3.5746050411880684`*^9, 3.574611608817715*^9, 3.5746129532296114`*^9, 
    3.574613090224447*^9, 3.5746227589604673`*^9, 3.5746265407917757`*^9, 
@@ -132,7 +124,7 @@ Cell[BoxData[
    3.5747141258685074`*^9, {3.5747142191508427`*^9, 3.5747142291824164`*^9}, {
    3.5747887859481735`*^9, 3.574788802888142*^9}, 3.57479704108034*^9, 
    3.57479856354742*^9, 3.5747985996024823`*^9, 3.57480361156415*^9, 
-   3.574803759400606*^9, 3.574804617377679*^9}]
+   3.574803759400606*^9, 3.574804617377679*^9, 3.5750400828662295`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -162,14 +154,16 @@ Cell[BoxData[
    SubscriptBox["v", "refNeg"], "=", 
    RowBox[{"-", "5.0"}]}], ";", 
   RowBox[{
-   SubscriptBox["v", "sat"], "=", "11"}], ";", " ", 
+   SubscriptBox["v", "sat"], "=", "11"}], ";", 
+  RowBox[{
+   SubscriptBox["v", "th"], "=", "5"}], ";", " ", 
   RowBox[{
    SubscriptBox["t", "runup"], "=", "0.001"}], ";", " ", 
   RowBox[{
    SubscriptBox["v", "runupFS"], "=", 
-   RowBox[{"-", "5000"}]}], ";", 
-  RowBox[{
-   SubscriptBox["n", "Patters"], "=", "100"}], ";"}]], "Input"],
+   RowBox[{"-", "5000"}]}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.5750411598808312`*^9, {3.5750423268155766`*^9, 3.5750423356670823`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -184,7 +178,7 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell["Resistor Values:", "Subsubsection",
- CellChangeTimes->{3.574804516173891*^9}],
+ CellChangeTimes->{3.574804516173891*^9, 3.5750401005692425`*^9}],
 
 Cell[CellGroupData[{
 
@@ -209,7 +203,7 @@ Cell[BoxData[
        SubscriptBox["v", "refNeg"]}], 
       SubscriptBox["i", "refFS"]]}]}], "}"}], "]"}]], "Input",
  CellChangeTimes->{{3.5746242122315893`*^9, 3.5746242170958676`*^9}, {
-  3.574803747711937*^9, 3.574803749280027*^9}}],
+   3.574803747711937*^9, 3.574803749280027*^9}, 3.5750401005692425`*^9}],
 
 Cell[BoxData[
  DynamicBox[
@@ -223,6 +217,8 @@ Cell[BoxData[
      Subscript[$CellContext`v, $CellContext`refNeg]/
      Subscript[$CellContext`i, $CellContext`refFS]}, StandardForm],
   ImageSizeCache->{202., {3., 11.}}]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
  CellChangeTimes->{
   3.5746242187419615`*^9, 3.5746265408827806`*^9, 3.5746275293823195`*^9, 
    3.57462764197676*^9, 3.5746276732875504`*^9, 3.5747020608824296`*^9, 
@@ -231,7 +227,46 @@ Cell[BoxData[
    3.5747934791016064`*^9, 3.5747968933778915`*^9, 3.57479699649779*^9, 
    3.5747970412633505`*^9, 3.574797153116748*^9, 3.5747985635764217`*^9, 
    3.5747985996274834`*^9, 3.574803611585151*^9, 3.574803759439608*^9, 
-   3.5748046174156814`*^9}]
+   3.5748046174156814`*^9, {3.5750400829502344`*^9, 3.575040100570242*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Integration Capacitor: ", "Subsubsection"]], \
+"Subsubsection",
+ CellChangeTimes->{3.575040129005869*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{"capacitor", "=", 
+   RowBox[{"NSolve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["1", 
+        RowBox[{
+         SubscriptBox["r", "Mes"], "*", 
+         SubscriptBox["c", "int"]}]], "*", 
+       SubscriptBox["v", "inFS"], "*", 
+       SubscriptBox["t", "runup"]}], "\[Equal]", 
+      RowBox[{"-", 
+       SubscriptBox["v", "runupFS"]}]}], ",", 
+     SubscriptBox["c", "int"]}], "]"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ DynamicBox[
+  ToBoxes[$CellContext`capacitor = 
+   NSolve[(1/(Subscript[$CellContext`r, $CellContext`Mes] 
+       Subscript[$CellContext`c, $CellContext`int])) 
+      Subscript[$CellContext`v, $CellContext`inFS] 
+      Subscript[$CellContext`t, $CellContext`runup] == -
+      Subscript[$CellContext`v, $CellContext`runupFS], 
+     Subscript[$CellContext`c, $CellContext`int]], StandardForm],
+  ImageSizeCache->{172., {6., 16.}}]], "Output",
+ CellChangeTimes->{3.5750401118348866`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -241,42 +276,59 @@ Cell["Timing", "Subsubsection",
  CellChangeTimes->{{3.574804432462103*^9, 3.5748044332141457`*^9}}],
 
 Cell[TextData[{
- "Calculate the mean time a reference is swichted in, with the 3458A \
-patterns. 10% at each end is without any ",
+ "Calculate the maximum allowable pattern time, to not overshoot ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["v", "ref"], TraditionalForm]],
+   SubscriptBox["V", "th"], TraditionalForm]],
   FormatType->"TraditionalForm"],
- " activated, so only use 80% of the ",
- StyleBox["pattern time", "Subsection"]
+ " by more than 0.5V (we want the integrator to sabilize around the zero \
+position"
 }], "Text",
  CellChangeTimes->{{3.5746225940540347`*^9, 3.574622621381598*^9}, {
   3.574625361942349*^9, 3.574625365493552*^9}, {3.5747928247011766`*^9, 
-  3.574792902093603*^9}}],
+  3.574792902093603*^9}, {3.575042580605092*^9, 3.575042601991315*^9}, {
+  3.575042644644755*^9, 3.5750426484079704`*^9}, {3.5750427082973957`*^9, 
+  3.5750427412132783`*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Dynamic", "[", 
-  RowBox[{"{", 
-   RowBox[{
-    RowBox[{
-     SubscriptBox["t", "Pattern"], "=", 
-     FractionBox[
-      SubscriptBox["t", "runup"], 
-      SubscriptBox["n", "Patters"]]}], ",", 
-    RowBox[{
-     SubscriptBox["t", "Pos"], "=", 
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
+   RowBox[{"ptime", "=", 
+    RowBox[{"NSolve", "[", 
      RowBox[{
-      FractionBox[
-       SubscriptBox["t", "runup"], 
-       SubscriptBox["n", "Patters"]], "*", "0.8"}]}], ",", 
-    RowBox[{
-     SubscriptBox["t", "Neg"], "=", 
-     RowBox[{
-      FractionBox[
-       SubscriptBox["t", "runup"], 
-       SubscriptBox["n", "Patters"]], "*", "0.8"}]}]}], "}"}], "]"}]], "Input",
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1", 
+           RowBox[{
+            SubscriptBox["r", "Mes"], "*", 
+            SubscriptBox["c", "int"]}]]}], "*", 
+         SubscriptBox["v", "inFS"], "*", 
+         SubscriptBox["t", "pattern"]}], "-", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{
+           SubscriptBox["r", "RefNeg"], "*", 
+           SubscriptBox["c", "int"]}]], "*", 
+         SubscriptBox["v", "refNeg"], "*", "0.8", "*", 
+         SubscriptBox["t", "pattern"]}], "-", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{
+           SubscriptBox["r", "RefPos"], "*", 
+           SubscriptBox["c", "int"]}]], "*", 
+         SubscriptBox["v", "refPos"], "*", "0.1", "*", 
+         SubscriptBox["t", "pattern"]}]}], "\[Equal]", 
+       RowBox[{
+        RowBox[{"-", "2"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["v", "th"], "+", "0.25"}], ")"}]}]}], ",", 
+      SubscriptBox["t", "pattern"]}], "]"}]}], "]"}], "/.", 
+  "capacitor"}]], "Input",
  CellChangeTimes->{{3.5746051215706663`*^9, 3.5746051643991156`*^9}, {
    3.574605874848751*^9, 3.5746058961599703`*^9}, {3.574605952752207*^9, 
    3.5746059599996214`*^9}, {3.574606077345333*^9, 3.574606093136236*^9}, {
@@ -287,31 +339,119 @@ Cell[BoxData[
    3.5746259669039507`*^9}, {3.5747888090064917`*^9, 3.574788849774824*^9}, {
    3.5747928088952727`*^9, 3.574792847279468*^9}, {3.5747951064476852`*^9, 
    3.5747951231356397`*^9}, {3.5747969631358814`*^9, 3.574796964350951*^9}, 
-   3.574797164994427*^9, {3.5748037391204457`*^9, 3.574803742079615*^9}}],
+   3.574797164994427*^9, {3.5748037391204457`*^9, 3.574803742079615*^9}, {
+   3.575040292256206*^9, 3.57504029478135*^9}, {3.5750406744740677`*^9, 
+   3.575040836259321*^9}, {3.575040888301298*^9, 3.575040905169263*^9}, {
+   3.5750409640786324`*^9, 3.575041020813877*^9}, {3.5750410547708197`*^9, 
+   3.5750410620472355`*^9}, {3.575041281766803*^9, 3.5750412943355217`*^9}, {
+   3.575041332896727*^9, 3.5750414012106347`*^9}, 3.575042341477415*^9, {
+   3.5750426073426213`*^9, 3.575042632640068*^9}, {3.5750427376640754`*^9, 
+   3.5750427378240843`*^9}}],
 
 Cell[BoxData[
- DynamicBox[
-  ToBoxes[{Subscript[$CellContext`t, Pattern] = 
-    Subscript[$CellContext`t, $CellContext`runup]/
-     Subscript[$CellContext`n, $CellContext`Patters], 
-    Subscript[$CellContext`t, $CellContext`Pos] = (
-      Subscript[$CellContext`t, $CellContext`runup]/
-      Subscript[$CellContext`n, $CellContext`Patters]) 0.8, 
-    Subscript[$CellContext`t, $CellContext`Neg] = (
-      Subscript[$CellContext`t, $CellContext`runup]/
-      Subscript[$CellContext`n, $CellContext`Patters]) 0.8}, StandardForm],
-  ImageSizeCache->{264., {6., 16.}}]], "Output",
+ RowBox[{"{", 
+  DynamicBox[
+   ToBoxes[$CellContext`ptime = 
+    NSolve[(-(1/(Subscript[$CellContext`r, $CellContext`Mes] 1.*^-10))) 
+        Subscript[$CellContext`v, $CellContext`inFS] 
+        Subscript[$CellContext`t, $CellContext`pattern] - (1/(
+        Subscript[$CellContext`r, $CellContext`RefNeg] 1.*^-10)) 
+       Subscript[$CellContext`v, $CellContext`refNeg] 0.8 
+       Subscript[$CellContext`t, $CellContext`pattern] - (1/(
+        Subscript[$CellContext`r, $CellContext`RefPos] 1.*^-10)) 
+       Subscript[$CellContext`v, $CellContext`refPos] 0.1 
+       Subscript[$CellContext`t, $CellContext`pattern] == (-2) (
+        Subscript[$CellContext`v, $CellContext`th] + 0.25), 
+      Subscript[$CellContext`t, $CellContext`pattern]], StandardForm],
+   ImageSizeCache->{212., {5., 11.}}], "}"}]], "Output",
  CellChangeTimes->{
-  3.574625700929738*^9, {3.57462595937652*^9, 3.574625967728998*^9}, 
-   3.5746260534449005`*^9, 3.5746265408277774`*^9, 3.574627505539956*^9, 
-   3.574627673254548*^9, 3.5747020608474274`*^9, 3.574711870243493*^9, 
-   3.5747141259045095`*^9, {3.5747142191818447`*^9, 3.574714229220419*^9}, {
-   3.5747888437544794`*^9, 3.574788854056069*^9}, 3.5747929054487953`*^9, 
-   3.574793476745472*^9, 3.574795123930685*^9, 3.5747968861384773`*^9, 
-   3.5747969683621807`*^9, 3.574797041115342*^9, 3.5747971682666144`*^9, 
-   3.5747972353074493`*^9, 3.5747985636014233`*^9, 3.5747985996494846`*^9, 
-   3.574803451275982*^9, 3.574803498284671*^9, 3.5748036116041527`*^9, {
-   3.574803743162677*^9, 3.574803759461609*^9}, 3.5748046174356823`*^9}]
+  3.5750409424623957`*^9, {3.5750409804295673`*^9, 3.57504102278899*^9}, 
+   3.5750411400796986`*^9, {3.5750412848619795`*^9, 3.575041295217572*^9}, 
+   3.575041366498649*^9, 3.575041411763238*^9, {3.5750423427994905`*^9, 
+   3.5750423485088167`*^9}, 3.5750426336241245`*^9, 3.575042743150389*^9}]
+}, Open  ]],
+
+Cell["\<\
+Compute the minimum allowable number of patterns, due to the pattern time:\
+\>", "Text",
+ CellChangeTimes->{{3.5750425547186117`*^9, 3.5750425768508773`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{
+   SubscriptBox["n", "Patters"], "=", 
+   RowBox[{"Ceiling", "[", 
+    RowBox[{
+     FractionBox[
+      SubscriptBox["t", "runup"], 
+      SubscriptBox["t", "pattern"]], "/.", "ptime"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.57504117629277*^9, 3.5750412086676216`*^9}, {
+  3.575041458583916*^9, 3.5750414608490458`*^9}, {3.575042360675513*^9, 
+  3.575042361791577*^9}, {3.575042849835491*^9, 3.575042890702829*^9}, {
+  3.575043065087803*^9, 3.5750430671719217`*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[Subscript[$CellContext`n, $CellContext`Patters] = Ceiling[
+     ReplaceAll[
+     Subscript[$CellContext`t, $CellContext`runup]/
+      Subscript[$CellContext`t, $CellContext`pattern], $CellContext`ptime]], 
+   StandardForm],
+  ImageSizeCache->{40., {3., 11.}}]], "Output",
+ CellChangeTimes->{{3.575041200175136*^9, 3.5750412096926804`*^9}, 
+   3.5750413033340364`*^9, {3.5750414542556686`*^9, 3.575041461644091*^9}, {
+   3.575042351550991*^9, 3.575042363440671*^9}, {3.5750428599850717`*^9, 
+   3.5750428918528943`*^9}, 3.575043068556001*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["t", "Pos"], "=", 
+      RowBox[{
+       FractionBox[
+        SubscriptBox["t", "runup"], 
+        SubscriptBox["n", "Patters"]], "*", "0.8"}]}], ",", 
+     RowBox[{
+      SubscriptBox["t", "Neg"], "=", 
+      RowBox[{
+       FractionBox[
+        SubscriptBox["t", "runup"], 
+        SubscriptBox["n", "Patters"]], "*", "0.8"}]}], ",", " ", 
+     RowBox[{
+      SubscriptBox["t", "min"], "=", 
+      RowBox[{
+       FractionBox[
+        SubscriptBox["t", "runup"], 
+        SubscriptBox["n", "Patters"]], "*", "0.1"}]}]}], "}"}], "/.", 
+   "ptime"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5750410687066164`*^9, 3.5750410800372643`*^9}, {
+  3.575042441519137*^9, 3.5750424817684393`*^9}, {3.5750429317171745`*^9, 
+  3.57504294281981*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   ReplaceAll[{
+    Subscript[$CellContext`t, $CellContext`Pos] = (
+       Subscript[$CellContext`t, $CellContext`runup]/
+       Subscript[$CellContext`n, $CellContext`Patters]) 0.8, 
+     Subscript[$CellContext`t, $CellContext`Neg] = (
+       Subscript[$CellContext`t, $CellContext`runup]/
+       Subscript[$CellContext`n, $CellContext`Patters]) 0.8, 
+     Subscript[$CellContext`t, $CellContext`min] = (
+       Subscript[$CellContext`t, $CellContext`runup]/
+       Subscript[$CellContext`n, $CellContext`Patters]) 
+      0.1}, $CellContext`ptime], StandardForm],
+  ImageSizeCache->{493., {6., 16.}}]], "Output",
+ CellChangeTimes->{{3.5750424765361395`*^9, 3.5750424827524953`*^9}, 
+   3.5750428632272573`*^9, {3.575042894170027*^9, 3.57504290733678*^9}, 
+   3.5750429450049343`*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -335,11 +475,13 @@ Cell[BoxData[
  RowBox[{"Dynamic", "[", 
   RowBox[{
    SubscriptBox["f", "min"], "=", 
-   FractionBox["10", 
-    RowBox[{
-     FractionBox[
-      SubscriptBox["t", "runup"], 
-      SubscriptBox["n", "Patters"]], "*", "0.10"}]]}], "]"}]], "Input",
+   RowBox[{
+    FractionBox["10", 
+     RowBox[{
+      FractionBox[
+       SubscriptBox["t", "runup"], 
+       SubscriptBox["n", "Patters"]], "*", "0.10"}]], "/.", "ptime"}]}], 
+  "]"}]], "Input",
  CellChangeTimes->{{3.5746226594757767`*^9, 3.5746227977666864`*^9}, {
    3.5746228479275556`*^9, 3.5746228649825315`*^9}, {3.574625596887787*^9, 
    3.5746256406952925`*^9}, 3.5746258386316137`*^9, 3.574625978198597*^9, 
@@ -349,14 +491,17 @@ Cell[BoxData[
    3.5747927708620973`*^9}, {3.57479422659136*^9, 3.5747942917580876`*^9}, {
    3.5747943742758074`*^9, 3.574794380318153*^9}, {3.5747969708633237`*^9, 
    3.574796986335209*^9}, {3.5747972427988777`*^9, 3.574797242894883*^9}, {
-   3.5748037293758883`*^9, 3.5748037361432753`*^9}}],
+   3.5748037293758883`*^9, 3.5748037361432753`*^9}, {3.5750425222327538`*^9, 
+   3.575042528013084*^9}, 3.575042953331411*^9}],
 
 Cell[BoxData[
  DynamicBox[ToBoxes[
   Subscript[$CellContext`f, $CellContext`min] = 
-   10/((Subscript[$CellContext`t, $CellContext`runup]/
-     Subscript[$CellContext`n, $CellContext`Patters]) 0.1), StandardForm],
-  ImageSizeCache->{64., {0., 16.}}]], "Output",
+   ReplaceAll[
+    10/((Subscript[$CellContext`t, $CellContext`runup]/
+      Subscript[$CellContext`n, $CellContext`Patters]) 
+     0.1), $CellContext`ptime], StandardForm],
+  ImageSizeCache->{104., {6., 16.}}]], "Output",
  CellChangeTimes->{{3.5746256819686537`*^9, 3.574625702674838*^9}, {
    3.574625960787601*^9, 3.5746259797306843`*^9}, {3.574626042736288*^9, 
    3.574626054847981*^9}, {3.574626096145343*^9, 3.574626168209465*^9}, {
@@ -371,7 +516,8 @@ Cell[BoxData[
    3.5747970411393433`*^9, {3.574797239385682*^9, 3.5747972436579266`*^9}, 
    3.574798563622424*^9, 3.574798599668486*^9, 3.574803452762067*^9, 
    3.574803501208838*^9, 3.574803611619153*^9, 3.57480375947861*^9, 
-   3.5748046174526834`*^9}]
+   3.5748046174526834`*^9, 3.575040083058241*^9, 3.5750425291271477`*^9, 
+   3.5750429556175413`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -405,7 +551,7 @@ Cell[BoxData[
    3.5747968887296257`*^9, 3.574796992376554*^9, 3.5747970411663446`*^9, 
    3.5747972460890656`*^9, 3.5747985636434255`*^9, 3.574798599688487*^9, 
    3.5748034545211678`*^9, 3.5748036116341543`*^9, 3.574803715221079*^9, 
-   3.574803759496611*^9, 3.5748046174696846`*^9}]
+   3.574803759496611*^9, 3.5748046174696846`*^9, 3.5750400830762415`*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -440,7 +586,7 @@ Cell[BoxData[
    3.5747969936086245`*^9, 3.574797041190346*^9, 3.574797247016119*^9, 
    3.574798563664427*^9, 3.5747985997084885`*^9, 3.574803456072256*^9, 
    3.5748036116491547`*^9, 3.5748037164571495`*^9, 3.5748037595136123`*^9, 
-   3.5748046174876857`*^9}]
+   3.5748046174876857`*^9, 3.5750400830922427`*^9}]
 }, Open  ]],
 
 Cell["Add some margin ", "Text",
@@ -469,7 +615,7 @@ Cell[BoxData[
    3.5747969947106876`*^9, 3.5747970412153473`*^9, 3.5747972481511836`*^9, 
    3.5747985636854277`*^9, 3.5747985997274895`*^9, 3.5748034579593644`*^9, 
    3.5748036116641555`*^9, 3.574803717702221*^9, 3.574803759530613*^9, 
-   3.5748046175046864`*^9}]
+   3.5748046175046864`*^9, 3.575040083108244*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -491,7 +637,7 @@ Cell[BoxData[
    3.57479292511292*^9, 3.5747968920098133`*^9, 3.574797041238349*^9, 
    3.574797249401255*^9, 3.574798563705429*^9, 3.5747985997464905`*^9, 
    3.574803459578457*^9, 3.5748036116791563`*^9, 3.5748037595486145`*^9, 
-   3.5748046175236874`*^9}]
+   3.5748046175236874`*^9, 3.5750400831242447`*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -501,97 +647,6 @@ Cell["\<\
 Compute the component values and constraints\
 \>", "Subsubsection",
  CellChangeTimes->{3.5748045947863874`*^9}],
-
-Cell[TextData[{
- "Integration ",
- StyleBox["Capacitor", "Subsection"],
- ": With the maximum slope ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"(", 
-    SubscriptBox["V", "in"]}], TraditionalForm]]],
- "positive and negative reference switched in), the integrator shall rise to \
-70% ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["V", "sat"], TraditionalForm]]],
- "within 45% of the time the reference is switched in:\nold and wrong: ",
- Cell[BoxData[
-  RowBox[{"capacitor", "=", 
-   RowBox[{"NSolve", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        FractionBox["1", 
-         RowBox[{
-          SubscriptBox["r", "Mes"], "*", 
-          SubscriptBox["c", "int"]}]], "*", 
-        SubscriptBox["v", "inFS"], "*", 
-        RowBox[{"(", 
-         RowBox[{
-          SubscriptBox["t", "Pos"], "*", "0.45"}], ")"}]}], "+", 
-       RowBox[{
-        FractionBox["1", 
-         RowBox[{
-          SubscriptBox["r", "RefPos"], "*", 
-          SubscriptBox["c", "int"]}]], "*", 
-        SubscriptBox["v", "refPos"], "*", 
-        RowBox[{"(", 
-         RowBox[{
-          SubscriptBox["t", "Pos"], "*", "0.45"}], ")"}]}]}], "\[Equal]", 
-      RowBox[{"(", 
-       RowBox[{"0.70", "*", 
-        SubscriptBox["v", "sat"]}], ")"}]}], ",", 
-     SubscriptBox["c", "int"]}], "]"}]}]]]
-}], "Text",
- CellChangeTimes->{{3.574623906502103*^9, 3.5746239133174925`*^9}, {
-   3.5746240004854784`*^9, 3.574624040453764*^9}, {3.574624073317644*^9, 
-   3.5746241371252937`*^9}, 3.5746254087570267`*^9, {3.5746268370467205`*^9, 
-   3.5746268373497376`*^9}, {3.574626901606413*^9, 3.5746269017024183`*^9}, {
-   3.5746273766145816`*^9, 3.5746273767575903`*^9}, {3.5747926411666794`*^9, 
-   3.5747926883813796`*^9}, {3.574796830653304*^9, 3.574796830969322*^9}, {
-   3.5747978686216726`*^9, 3.5747978739969797`*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Dynamic", "[", 
-  RowBox[{"capacitor", "=", 
-   RowBox[{"NSolve", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{
-       FractionBox["1", 
-        RowBox[{
-         SubscriptBox["r", "Mes"], "*", 
-         SubscriptBox["c", "int"]}]], "*", 
-       SubscriptBox["v", "inFS"], "*", 
-       SubscriptBox["t", "runup"]}], "\[Equal]", 
-      RowBox[{"-", 
-       SubscriptBox["v", "runupFS"]}]}], ",", 
-     SubscriptBox["c", "int"]}], "]"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.57479684543915*^9, 3.574796856190765*^9}, {
-  3.5747969148471193`*^9, 3.5747969171672525`*^9}, {3.574803637231618*^9, 
-  3.574803642142899*^9}}],
-
-Cell[BoxData[
- DynamicBox[
-  ToBoxes[$CellContext`capacitor = 
-   NSolve[(1/(Subscript[$CellContext`r, $CellContext`Mes] 
-       Subscript[$CellContext`c, $CellContext`int])) 
-      Subscript[$CellContext`v, $CellContext`inFS] 
-      Subscript[$CellContext`t, $CellContext`runup] == -
-      Subscript[$CellContext`v, $CellContext`runupFS], 
-     Subscript[$CellContext`c, $CellContext`int]], StandardForm],
-  ImageSizeCache->{172., {6., 16.}}]], "Output",
- CellChangeTimes->{
-  3.5747960153806734`*^9, 3.574796858281884*^9, {3.5747968954080076`*^9, 
-   3.574796918144308*^9}, 3.5747969985909095`*^9, 3.574797041316353*^9, 
-   3.574797251185357*^9, 3.574798563756432*^9, 3.5747985997934933`*^9, 
-   3.5748034658448153`*^9, 3.5748036117301598`*^9, 3.5748036436399846`*^9, 
-   3.574803759565615*^9, 3.574804617542689*^9}]
-}, Open  ]],
 
 Cell[TextData[{
  "Calculate the ",
@@ -671,7 +726,7 @@ Cell[BoxData[
    3.5747972574517155`*^9}, 3.574797424392264*^9, 3.5747982105862317`*^9, 
    3.574798563800434*^9, 3.574798599814494*^9, 3.5748034691480045`*^9, 
    3.57480361174516*^9, 3.574803644798051*^9, 3.5748037596216183`*^9, 
-   3.574804617598692*^9}]
+   3.574804617598692*^9, 3.575040083139245*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -692,47 +747,62 @@ least significant digits after the last switch within:"
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Dynamic", "[", 
-  RowBox[{
-   SubscriptBox["t", "settle"], "=", 
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
    RowBox[{
-    SubscriptBox["t", "Pattern"], " ", "*", "0.1"}]}], "]"}]], "Input",
+    SubscriptBox["t", "settle"], "=", 
+    RowBox[{
+     FractionBox[
+      SubscriptBox["t", "runup"], 
+      SubscriptBox["n", "Patters"]], " ", "*", "0.1"}]}], "]"}], "/.", 
+  "ptime"}]], "Input",
  CellChangeTimes->{{3.574795209258566*^9, 3.574795230541783*^9}, {
-  3.5748036482492485`*^9, 3.574803652732505*^9}}],
+   3.5748036482492485`*^9, 3.574803652732505*^9}, {3.5750408559914503`*^9, 
+   3.5750408727914104`*^9}, {3.5750410029208536`*^9, 3.575041028688328*^9}, 
+   3.5750429685432806`*^9}],
 
 Cell[BoxData[
- DynamicBox[ToBoxes[
-  Subscript[$CellContext`t, $CellContext`settle] = 
-   Subscript[$CellContext`t, Pattern] 0.1, StandardForm],
-  ImageSizeCache->{71., {0., 16.}}]], "Output",
- CellChangeTimes->{3.5747952324218903`*^9, 3.574796932616136*^9, 
-  3.574797041380357*^9, 3.5747982122953296`*^9, 3.574798563821436*^9, 
-  3.5747985998314953`*^9, 3.5748034763274145`*^9, 3.5748036117621613`*^9, 
-  3.5748036565517235`*^9, 3.5748037596396194`*^9, 3.574804617617693*^9}]
+ RowBox[{"{", 
+  DynamicBox[ToBoxes[
+   Subscript[$CellContext`t, $CellContext`settle] = (
+      Subscript[$CellContext`t, $CellContext`runup]/
+      Subscript[$CellContext`n, $CellContext`Patters]) 0.1, StandardForm],
+   ImageSizeCache->{141., {6., 16.}}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.5747952324218903`*^9, 3.574796932616136*^9, 3.574797041380357*^9, 
+   3.5747982122953296`*^9, 3.574798563821436*^9, 3.5747985998314953`*^9, 
+   3.5748034763274145`*^9, 3.5748036117621613`*^9, 3.5748036565517235`*^9, 
+   3.5748037596396194`*^9, 3.574804617617693*^9, 3.575040083156246*^9, {
+   3.5750408665600543`*^9, 3.575040873951477*^9}, {3.575041005055976*^9, 
+   3.575041032892568*^9}, 3.5750429710624247`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Dynamic", "[", 
-  RowBox[{
-   SubscriptBox["v", 
-    RowBox[{"settle", " "}]], "=", 
+ RowBox[{
+  RowBox[{"Dynamic", "[", 
    RowBox[{
-    SubscriptBox["adc", "volts"], " ", "*", "0.1"}]}], "]"}]], "Input",
+    SubscriptBox["v", 
+     RowBox[{"settle", " "}]], "=", 
+    RowBox[{
+     SubscriptBox["adc", "volts"], " ", "*", "0.1"}]}], "]"}], "/.", 
+  "ptime"}]], "Input",
  CellChangeTimes->{{3.574795571326275*^9, 3.574795582765929*^9}, {
-  3.574795639582179*^9, 3.574795641374281*^9}, {3.5748036591628723`*^9, 
-  3.5748036665602956`*^9}}],
+   3.574795639582179*^9, 3.574795641374281*^9}, {3.5748036591628723`*^9, 
+   3.5748036665602956`*^9}, 3.575041030691442*^9}],
 
 Cell[BoxData[
- DynamicBox[ToBoxes[
-  Subscript[$CellContext`v, $CellContext`settle] = 
-   Subscript[$CellContext`adc, $CellContext`volts] 0.1, StandardForm],
-  ImageSizeCache->{60., {0., 11.}}]], "Output",
+ RowBox[{"{", 
+  DynamicBox[ToBoxes[
+   Subscript[$CellContext`v, $CellContext`settle] = 
+    Subscript[$CellContext`adc, $CellContext`volts] 0.1, StandardForm],
+   ImageSizeCache->{60., {0., 11.}}], "}"}]], "Output",
  CellChangeTimes->{3.574795642280333*^9, 3.574796933832206*^9, 
   3.574797041401358*^9, 3.5747982133833914`*^9, 3.574798563842437*^9, 
   3.5747985998504963`*^9, 3.5748034777204943`*^9, 3.5748036117791624`*^9, 
-  3.574803683896287*^9, 3.5748037596566205`*^9, 3.574804617636694*^9}]
+  3.574803683896287*^9, 3.5748037596566205`*^9, 3.574804617636694*^9, 
+  3.575040083172247*^9, 3.575041033941628*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -773,7 +843,8 @@ Cell[BoxData[
    3.57471421928185*^9, 3.5747142293594265`*^9}, 3.574788870918033*^9, 
    3.5747969350312743`*^9, 3.5747970414223595`*^9, 3.574798215191495*^9, 
    3.574798563864438*^9, 3.5747985998694973`*^9, 3.574803611796163*^9, 
-   3.5748036826772175`*^9, 3.5748037596746216`*^9, 3.574804617655695*^9}]
+   3.5748036826772175`*^9, 3.5748037596746216`*^9, 3.574804617655695*^9, 
+   3.5750400831882477`*^9}]
 }, Open  ]],
 
 Cell[TextData[{
@@ -935,7 +1006,8 @@ Cell[BoxData[
    3.574796937302404*^9, {3.5747970314627895`*^9, 3.5747970414633617`*^9}, 
    3.5747982171746087`*^9, 3.5747985639034405`*^9, 3.5747985999065*^9, 
    3.5748034908722467`*^9, 3.5748036118311653`*^9, 3.5748036800390663`*^9, 
-   3.574803759696623*^9, 3.574804617677696*^9}]
+   3.574803759696623*^9, 3.574804617677696*^9, 3.5750400832422514`*^9, 
+   3.575042962181917*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -973,88 +1045,99 @@ Cell[1840, 64, 539, 14, 69, "Input"],
 Cell[2382, 80, 232, 7, 39, "Text"],
 Cell[CellGroupData[{
 Cell[2639, 91, 492, 12, 39, "Input"],
-Cell[3134, 105, 1160, 29, 62, "Output"]
+Cell[3134, 105, 982, 21, 60, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4343, 140, 254, 5, 102, "Section"],
+Cell[4165, 132, 254, 5, 102, "Section"],
 Cell[CellGroupData[{
-Cell[4622, 149, 106, 1, 43, "Subsubsection"],
-Cell[4731, 152, 585, 19, 39, "Input"],
-Cell[5319, 173, 293, 7, 39, "Input"]
+Cell[4444, 141, 106, 1, 43, "Subsubsection"],
+Cell[4553, 144, 675, 21, 39, "Input"],
+Cell[5231, 167, 293, 7, 39, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5649, 185, 83, 1, 43, "Subsubsection"],
+Cell[5561, 179, 107, 1, 43, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[5757, 190, 673, 21, 65, "Input"],
-Cell[6433, 213, 1135, 20, 39, "Output"]
+Cell[5693, 184, 698, 21, 65, "Input"],
+Cell[6394, 207, 1233, 22, 39, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7617, 239, 99, 1, 43, "Subsubsection"],
-Cell[7719, 242, 498, 12, 49, "Text"],
+Cell[7676, 235, 129, 2, 43, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[8242, 258, 1407, 31, 68, "Input"],
-Cell[9652, 291, 1333, 22, 43, "Output"]
-}, Open  ]],
-Cell[11000, 316, 761, 13, 74, "Text"],
-Cell[CellGroupData[{
-Cell[11786, 333, 958, 18, 86, "Input"],
-Cell[12747, 353, 1317, 20, 41, "Output"]
+Cell[7830, 241, 480, 15, 67, "Input"],
+Cell[8313, 258, 499, 10, 43, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14113, 379, 131, 2, 43, "Subsubsection"],
+Cell[8861, 274, 99, 1, 43, "Subsubsection"],
+Cell[8963, 277, 605, 13, 39, "Text"],
 Cell[CellGroupData[{
-Cell[14269, 385, 335, 8, 62, "Input"],
-Cell[14607, 395, 789, 12, 57, "Output"]
+Cell[9593, 294, 2480, 54, 98, "Input"],
+Cell[12076, 350, 1149, 20, 39, "Output"]
 }, Open  ]],
-Cell[15411, 410, 174, 4, 49, "Text"],
+Cell[13240, 373, 168, 3, 39, "Text"],
 Cell[CellGroupData[{
-Cell[15610, 418, 340, 9, 67, "Input"],
-Cell[15953, 429, 792, 13, 39, "Output"]
-}, Open  ]],
-Cell[16760, 445, 102, 1, 39, "Text"],
-Cell[CellGroupData[{
-Cell[16887, 450, 294, 7, 39, "Input"],
-Cell[17184, 459, 746, 12, 39, "Output"]
+Cell[13433, 380, 527, 12, 70, "Input"],
+Cell[13963, 394, 575, 10, 39, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17967, 476, 235, 6, 39, "Input"],
-Cell[18205, 484, 556, 9, 39, "Output"]
+Cell[14575, 409, 852, 26, 68, "Input"],
+Cell[15430, 437, 819, 16, 43, "Output"]
+}, Open  ]],
+Cell[16264, 456, 761, 13, 74, "Text"],
+Cell[CellGroupData[{
+Cell[17050, 473, 1069, 21, 86, "Input"],
+Cell[18122, 496, 1436, 23, 43, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18810, 499, 121, 3, 43, "Subsubsection"],
-Cell[18934, 504, 1805, 49, 86, "Text"],
+Cell[19607, 525, 131, 2, 43, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[20764, 557, 647, 18, 67, "Input"],
-Cell[21414, 577, 818, 15, 43, "Output"]
+Cell[19763, 531, 335, 8, 62, "Input"],
+Cell[20101, 541, 813, 12, 57, "Output"]
 }, Open  ]],
-Cell[22247, 595, 227, 5, 49, "Text"],
+Cell[20929, 556, 174, 4, 49, "Text"],
 Cell[CellGroupData[{
-Cell[22499, 604, 1602, 31, 67, "Input"],
-Cell[24104, 637, 2391, 36, 39, "Output"]
+Cell[21128, 564, 340, 9, 67, "Input"],
+Cell[21471, 575, 816, 13, 39, "Output"]
 }, Open  ]],
-Cell[26510, 676, 609, 13, 49, "Text"],
+Cell[22302, 591, 102, 1, 39, "Text"],
 Cell[CellGroupData[{
-Cell[27144, 693, 289, 7, 39, "Input"],
-Cell[27436, 702, 477, 8, 41, "Output"]
+Cell[22429, 596, 294, 7, 39, "Input"],
+Cell[22726, 605, 768, 12, 39, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27950, 715, 360, 9, 39, "Input"],
-Cell[28313, 726, 486, 8, 39, "Output"]
+Cell[23531, 622, 235, 6, 39, "Input"],
+Cell[23769, 630, 580, 9, 39, "Output"]
+}, Open  ]]
 }, Open  ]],
-Cell[28814, 737, 431, 8, 49, "Text"],
 Cell[CellGroupData[{
-Cell[29270, 749, 577, 11, 39, "Input"],
-Cell[29850, 762, 869, 13, 41, "Output"]
+Cell[24398, 645, 121, 3, 43, "Subsubsection"],
+Cell[24522, 650, 227, 5, 49, "Text"],
+Cell[CellGroupData[{
+Cell[24774, 659, 1602, 31, 67, "Input"],
+Cell[26379, 692, 2413, 36, 39, "Output"]
 }, Open  ]],
-Cell[30734, 778, 721, 14, 74, "Text"],
-Cell[31458, 794, 3579, 85, 90, "Input"],
+Cell[28807, 731, 609, 13, 49, "Text"],
 Cell[CellGroupData[{
-Cell[35062, 883, 1307, 26, 39, "Input"],
-Cell[36372, 911, 1697, 26, 75, "Output"]
+Cell[29441, 748, 510, 13, 68, "Input"],
+Cell[29954, 763, 728, 13, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30719, 781, 420, 11, 39, "Input"],
+Cell[31142, 794, 559, 10, 39, "Output"]
+}, Open  ]],
+Cell[31716, 807, 431, 8, 49, "Text"],
+Cell[CellGroupData[{
+Cell[32172, 819, 577, 11, 39, "Input"],
+Cell[32752, 832, 897, 14, 41, "Output"]
+}, Open  ]],
+Cell[33664, 849, 721, 14, 74, "Text"],
+Cell[34388, 865, 3579, 85, 90, "Input"],
+Cell[CellGroupData[{
+Cell[37992, 954, 1307, 26, 39, "Input"],
+Cell[39302, 982, 1747, 27, 43, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
