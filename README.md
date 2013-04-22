@@ -4,7 +4,7 @@ First steps towards a fully open source hardware multimeter. This is the main re
 Since simple multimeters and old precision testgear isn't really that expensive anymore, this project will NOT offer a cheap/easy homebrew alternative to a bought off the shelf unit. It's purpose is to exercise the development of a precision mesurement unit and to document it's evolution so everybody can gain knownledge and have fun building one up :)
 
 
-#### The project is currently in the early requirements phase. Contributors are very welcome to join the process and discuss the requirements and early design documents.
+#### The project is currently in the prototype phase - schematic capture and PCB design will start soon in SVN over at [google code](https://code.google.com/p/oshw-multimeter/ "OSHW-Multimeter at Google Code"). Contributors are very welcome to join the process and discuss the schematics and the pcb layout. 
 
 
 ### Organization and File Tree
@@ -14,7 +14,7 @@ Every top-level directory starts with a 2 digit number XX followed by an undersc
 
 ### Current main contributors:
 - Lukas (Stoney49th)
-
+- MrFlibble
 
 ## LICENCES
 
