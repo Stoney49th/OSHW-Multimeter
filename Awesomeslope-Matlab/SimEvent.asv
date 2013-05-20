@@ -1,0 +1,15 @@
+classdef SimEvent
+    %EVENTTYPE Summary of this class goes here
+    %   Detailed explanation goes here
+    
+    properties
+        EventTime;
+    end
+    
+    methods (Abstract=true)
+        function run(obj)
+        end
+    end
+    
+end
+
