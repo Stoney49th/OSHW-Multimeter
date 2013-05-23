@@ -14,9 +14,9 @@ assignin('base','V_int_max', 11);
 assignin('base','V_th_pos',5);
 assignin('base','V_th_neg',-5);
 
-assignin('base','t_pattern',0.0000228571);
+assignin('base','t_pattern',3.1250e-05);
 
-assignin('base','SimTime_Max',0.005);
+assignin('base','SimTime_Max',0.0025);
 
 assignin('base','FPGA_Output_Freq',80000000);
 
