@@ -17,6 +17,7 @@ assignin('base','V_th_neg',-5);
 %Make the pattern such that we can fit 3 ADC samples in the smallest
 %pattern part (10% of the pattern)
 assignin('base','t_pattern',(3*625e-9)*10);
+assignin('base','t_delay_comp',250e-9);
 assignin('base','meas_period',0.0025);
 
 assignin('base','SimTime_Max',0.0025*31);
