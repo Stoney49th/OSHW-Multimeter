@@ -20,6 +20,12 @@ assignin('base','t_pattern',(3*625e-9)*10);
 assignin('base','t_delay_comp',250e-9);
 assignin('base','meas_period',0.0025);
 
+%Switch time parameters (worst case)
+assignin('base','sw_t_bbm',7e-9);
+assignin('base','sw_t_on',60e-9);
+assignin('base','sw_t_off',40e-9);
+
+
 assignin('base','SimTime_Max',0.0025*31);
 
 assignin('base','FPGA_Output_Freq',80000000);
